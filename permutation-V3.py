@@ -79,8 +79,9 @@ if __name__ == '__main__':
         result = [f"FM:({x})" for x in filter_result]
         uspto_str = "(" + ' '.join(result) + ") AND LD:true"
         fp.write(uspto_str)
+        fp.write(",")
         fp.write(','.join(unique_result))
-        # fp.write("\n")
         fp.write("\n")
     fp.close()
+
     input("搞定,按回车结束")
