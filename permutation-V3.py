@@ -1,3 +1,4 @@
+
 from openpyxl import load_workbook
 
 
@@ -73,12 +74,13 @@ if __name__ == '__main__':
     for i in range(len(text)):
         fp.write(text[i] + ',')
         unique_result = permutation(text[i], fp)
-        fp.write(','.join(unique_result))
-        fp.write("\n")
+
         filter_result = [item for item in unique_result if item.lower() not in tradetext]
         result = [f"FM:({x})" for x in filter_result]
         uspto_str = "(" + ' '.join(result) + ") AND LD:true"
         fp.write(uspto_str)
+        fp.write(','.join(unique_result))
+        # fp.write("\n")
         fp.write("\n")
     fp.close()
     input("搞定,按回车结束")
