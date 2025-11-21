@@ -89,7 +89,7 @@ if __name__ == '__main__':
         fp.write(text[i] + ',')
         unique_result = permutation(text[i], fp)
         trade_result = [item for item in unique_result if item.lower() in tradetext]
-        fp.write('|'.join(trade_result))
+        fp.write(' | '.join(trade_result))
         fp.write(",")
         filter_result = [item1 for item1 in unique_result if item1.lower() not in notradetext]
         result = [f"FM:({x})" for x in filter_result]
@@ -99,4 +99,5 @@ if __name__ == '__main__':
         fp.write(','.join(unique_result))
         fp.write("\n")
     fp.close()
+
     input("搞定,按回车结束")
